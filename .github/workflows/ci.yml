@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / ${{ matrix.cxx }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, cxx: g++ }
+          - { os: ubuntu-latest, cxx: clang++ }
+          - { os: macos-latest, cxx: clang++ }
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build with warnings as errors
+        run: make -j4 CXX=${{ matrix.cxx }} WERROR=1 kestrel kestrel-tests
+      - name: Unit tests (perft, search, eval, notation, UCI)
+        run: ./kestrel-tests
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Integration tests through python-chess
+        run: |
+          pip install chess
+          python tests/uci_test.py ./kestrel
+      - name: Benchmark
+        run: ./kestrel bench
+
+  sanitizers:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: AddressSanitizer + UBSan
+            flags: -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=undefined
+          - name: ThreadSanitizer
+            flags: -O1 -g -fsanitize=thread
+    steps:
+      - uses: actions/checkout@v5
+      # Newer kernels randomise more address bits than ThreadSanitizer's memory layout allows.
+      - run: sudo sysctl vm.mmap_rnd_bits=28
+      - name: Unit tests under the sanitizer
+        run: make sanitize CXX=clang++ SANITIZE="${{ matrix.flags }}"

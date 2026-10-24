@@ -1,0 +1,10 @@
+build/
+kestrel
+kestrel-tests
+kestrel-sanitize-tests
+*.dSYM/
+__pycache__/
+.venv/
+.DS_Store
+.vscode/
+.idea/

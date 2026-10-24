@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="438" viewBox="0 0 750 438" role="img" aria-label="kestrel play">
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:pre}</style>
+<rect width="750" height="438" rx="10" fill="#0f1216"/>
+<rect width="750" height="30" rx="10" fill="#1b2027"/><rect y="20" width="750" height="10" fill="#1b2027"/>
+<circle cx="18" cy="15" r="6" fill="#ff5f57"/><circle cx="38" cy="15" r="6" fill="#febc2e"/><circle cx="58" cy="15" r="6" fill="#28c840"/>
+<text x="375.0" y="20" fill="#8b93a1" text-anchor="middle" style="font-size:12px">kestrel play</text>
+<text x="18" y="54" fill="#8b93a1" xml:space="preserve">$ ./kestrel play --time 500</text>
+<text x="18" y="73" fill="#8b93a1" xml:space="preserve">Kestrel: you play white, the engine thinks 500 ms per move. Type &#x27;help&#x27; for commands.</text>
+<text x="18" y="92" fill="#5aa9ff" xml:space="preserve">Your move&gt; <tspan fill="#ffffff" font-weight="700">e4</tspan></text>
+<text x="18" y="111" fill="#f4b740" font-weight="700" xml:space="preserve">Kestrel plays e5   (eval -0.14 for Kestrel, depth 21, 1028730 nodes)</text>
+<text x="18" y="130" fill="#5aa9ff" xml:space="preserve">Your move&gt; <tspan fill="#ffffff" font-weight="700">Nf3</tspan></text>
+<text x="18" y="149" fill="#f4b740" font-weight="700" xml:space="preserve">Kestrel plays Nc6   (eval -0.10 for Kestrel, depth 21, 1020048 nodes)</text>
+<text x="18" y="168" fill="#5aa9ff" xml:space="preserve">Your move&gt; <tspan fill="#ffffff" font-weight="700">Bc4</tspan></text>
+<text x="18" y="187" fill="#f4b740" font-weight="700" xml:space="preserve">Kestrel plays Bc5   (eval -0.08 for Kestrel, depth 21, 1035220 nodes)</text>
+<text x="18" y="206" fill="#d6dae0" xml:space="preserve"></text>
+<text x="18" y="225" fill="#d6dae0" xml:space="preserve">  8  r  ·  b  q  k <tspan fill="#f4b740">[·]</tspan> n  r</text>
+<text x="18" y="244" fill="#d6dae0" xml:space="preserve">  7  p  p  p  p  ·  p  p  p</text>
+<text x="18" y="263" fill="#d6dae0" xml:space="preserve">  6     ·  n  ·     ·     ·</text>
+<text x="18" y="282" fill="#d6dae0" xml:space="preserve">  5  ·    <tspan fill="#f4b740">[b]</tspan>    p     ·</text>
+<text x="18" y="301" fill="#d6dae0" xml:space="preserve">  4     ·  B  ·  P  ·     ·</text>
+<text x="18" y="320" fill="#d6dae0" xml:space="preserve">  3  ·     ·     ·  N  ·</text>
+<text x="18" y="339" fill="#d6dae0" xml:space="preserve">  2  P  P  P  P     P  P  P</text>
+<text x="18" y="358" fill="#d6dae0" xml:space="preserve">  1  R  N  B  Q  K     ·  R</text>
+<text x="18" y="377" fill="#6b7380" xml:space="preserve">     a  b  c  d  e  f  g  h</text>
+<text x="18" y="396" fill="#d6dae0" xml:space="preserve"></text>
+<text x="18" y="415" fill="#5aa9ff" xml:space="preserve">Your move&gt; <tspan fill="#ffffff" font-weight="700"></tspan></text>
+</svg>
